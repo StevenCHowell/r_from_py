@@ -1,0 +1,22 @@
+name: py37_r
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python=3.7
+  - bokeh
+  - numpy
+  - scipy
+  - matplotlib
+  - seaborn
+  - altair
+  - ipython
+  - statsmodels
+  - pandas
+  - lxml
+  - beautifulsoup4
+  - scikit-learn
+
+  # r libraries
+  - r
+  - r-tidyverse

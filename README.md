@@ -1,2 +1,14 @@
-# r_from_py
-Project to work through the process of running R cod from Python
+# Running R code from a Python shell
+
+Project to work through running R code from Python
+
+1. Encapsulate some task in an R script that can be run as a shell command.  This task could process all the files in some input directory, or by reading a configuration or input file that contains instructions on what to process.
+    - [link 1](https://urldefense.proofpoint.com/v2/url?u=https-3A__stackoverflow.com_questions_18306362_run-2Dr-2Dscript-2Dfrom-2Dcommand-2Dline&d=DwIFAw&c=f4NRRID3zFYDyClb0wZXwA&r=ldO-s_Bm6nAcQi95SgaSXih51HBk-W5hkcNoGPRnzPU&m=Hr5bSZeBVibqSdDqfQlMFAfMpHVMb2Uyhhu3BzrRUbY&s=Q5gmy6ObNvSpeibclLEOCN2ePiu3U7oHm7RqjEH69y8&e=)
+    - [link 2](https://urldefense.proofpoint.com/v2/url?u=https-3A__stackoverflow.com_questions_3412911_r-2Dexe-2Drcmd-2Dexe-2Drscript-2Dexe-2Dand-2Drterm-2Dexe-2Dwhats-2Dthe-2Ddifference&d=DwIFAw&c=f4NRRID3zFYDyClb0wZXwA&r=ldO-s_Bm6nAcQi95SgaSXih51HBk-W5hkcNoGPRnzPU&m=Hr5bSZeBVibqSdDqfQlMFAfMpHVMb2Uyhhu3BzrRUbY&s=GdG3byg_wwKQL1cKi_c7dFDTOc5fPXXvOBN6Cq8FfZo&e=)
+    - [link 3](https://urldefense.proofpoint.com/v2/url?u=https-3A__cran.r-2Dproject.org_doc_manuals_R-2Dintro.html-23Invoking-2DR-2Dfrom-2Dthe-2Dcommand-2Dline&d=DwIFAw&c=f4NRRID3zFYDyClb0wZXwA&r=ldO-s_Bm6nAcQi95SgaSXih51HBk-W5hkcNoGPRnzPU&m=Hr5bSZeBVibqSdDqfQlMFAfMpHVMb2Uyhhu3BzrRUbY&s=PolCIRn-bstFx69Wakj6ILEyjpyy8G0r6rcPeoX_Q4Y&e=)
+2. Decide how do you want Python to provide input to the R script?  This can be complex as writing out a file with inputs or as simple as using the input in the subprocess call: `subrocess.call('Rscript', 'input commands')` or `subrocess.call('Rscript', 'input.csv')`.
+3. Using Python's `subprocess` module to run the R script using shell commands.
+    - [link 1](https://urldefense.proofpoint.com/v2/url?u=https-3A__www.bogotobogo.com_python_python-5Fsubprocess-5Fmodule.php&d=DwIFAw&c=f4NRRID3zFYDyClb0wZXwA&r=ldO-s_Bm6nAcQi95SgaSXih51HBk-W5hkcNoGPRnzPU&m=Hr5bSZeBVibqSdDqfQlMFAfMpHVMb2Uyhhu3BzrRUbY&s=lyd7EgJV0t6bhv_w9V5CMKE3PjTJLsR3gwcEMpnXpO0&e=)
+    - [link 2](https://urldefense.proofpoint.com/v2/url?u=https-3A__pymotw.com_3_subprocess_&d=DwIFAw&c=f4NRRID3zFYDyClb0wZXwA&r=ldO-s_Bm6nAcQi95SgaSXih51HBk-W5hkcNoGPRnzPU&m=Hr5bSZeBVibqSdDqfQlMFAfMpHVMb2Uyhhu3BzrRUbY&s=2a7RVHneu6rlKOXex6Yg1ZjlWVcX71kg9O7g62F0rnU&e=)
+4. Load the output from the R script into Python for further processing.  This is essentially the opposite of step 2.  Again, it can be as simple as just checking for an output csv then reading it in using `pandas.read_csv`.  If you want R to produce output using a custom format, you could instead use Python's built-in `open` and `read` functions to extract the info from a saved file.
+    - [link 1](https://urldefense.proofpoint.com/v2/url?u=https-3A__realpython.com_read-2Dwrite-2Dfiles-2Dpython_&d=DwIFAw&c=f4NRRID3zFYDyClb0wZXwA&r=ldO-s_Bm6nAcQi95SgaSXih51HBk-W5hkcNoGPRnzPU&m=Hr5bSZeBVibqSdDqfQlMFAfMpHVMb2Uyhhu3BzrRUbY&s=dnz3kJOZm8gRzgm8q_ypltWA0QjJKxrSdrgn6kpAZTQ&e=)

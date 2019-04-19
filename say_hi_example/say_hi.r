@@ -1,5 +1,5 @@
 say_hello <- function(){
-    print('hello')
+    print('Hello from R!')
 }
 
 say_hello()
